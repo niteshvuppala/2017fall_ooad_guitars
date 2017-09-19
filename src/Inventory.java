@@ -8,7 +8,17 @@ public class Inventory {
   public Inventory() {
     guitars = new LinkedList();
   }
-
+  /** 
+   * this method adds new guitar to the inventory
+ * @param serialNumber 
+ * @param price 
+ * @param builder 
+ * @param model 
+ * @param type
+ * @param backwood
+ * @param topwood 
+   *
+   * */
   public void addGuitar(String serialNumber, double price,
                         String builder, String model,
                         String type, String backWood, String topWood) {
@@ -17,6 +27,10 @@ public class Inventory {
     guitars.add(guitar);
   }
   public Guitar getGuitar(String serialNumber) {
+	  /** 
+	   * this method retrieves the serial number of the guitar
+	   * @return serial number of the guitar that is searched for  
+	   * */
     for (Iterator i = guitars.iterator(); i.hasNext(); ) {
       Guitar guitar = (Guitar)i.next();
       if (guitar.getSerialNumber().equals(serialNumber)) {
@@ -26,6 +40,10 @@ public class Inventory {
     return null;
   }
   public Guitar search(Guitar searchGuitar) {
+	  /** 
+	   * this method looks for a match of the guitar in the inventory
+	   * @return null if not found  
+	   * */
     for (Iterator i = guitars.iterator(); i.hasNext(); ) {
       Guitar guitar = (Guitar)i.next();
       // Ignore serial number since that's unique

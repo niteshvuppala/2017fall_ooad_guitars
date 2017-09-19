@@ -1,13 +1,23 @@
+/**
+ * @author Nitesh
+ * <h1> The program searches guitar in inventory that matches ones requirements </h1>
+ *  */
+
 public class FindGuitarTester {
 
   public static void main(String[] args) {
     // Set up Rick's guitar inventory
-    Inventory inventory = new Inventory();
+	  /**
+	   * the main method calls the methods in sequence required by the program
+	   * @param 0 args passed
+	   * @return nothing
+	   *  */
+    Inventory inventory = new Inventory(); //Creating instance for inventory class
     initializeInventory(inventory);
 
     Guitar whatErinLikes = new Guitar("", 0, "fender", "Stratocastor", 
-                                      "electric", "Alder", "Alder");
-    Guitar guitar = inventory.search(whatErinLikes);
+                                      "electric", "Alder", "Alder");// adding items to rick's inventory
+    Guitar guitar = inventory.search(whatErinLikes);// Searching inventory
     if (guitar != null) {
       System.out.println("Erin, you might like this " +
         guitar.getBuilder() + " " + guitar.getModel() +  " " +
@@ -20,7 +30,12 @@ public class FindGuitarTester {
     }
   }
 
-  private static void initializeInventory(Inventory inventory) {
+  private static void initializeInventory(Inventory inventory)
+  /**
+   * the function is used to add items to the inventory
+   * @param inventory
+   *  */
+  {
     inventory.addGuitar("11277", 3999.95, "Collings", "CJ", "acoustic",
                         "Indian Rosewood", "Sitka");
     inventory.addGuitar("V95693", 1499.95, "Fender", "Stratocastor", "electric",
